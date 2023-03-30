@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  assembleia-postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: db-assembleia
+      POSTGRES_USER: user-assembleia
+      POSTGRES_PASSWORD: pass-assembleia
+    ports:
+      - "5432:5432"
+    networks:
+      - assembleia-postgres-network
+  assembleia-pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin.assembleia@southsystem.com.br"
+      PGADMIN_DEFAULT_PASSWORD: "AdmAssembleia@2023"
+    ports:
+      - "16549:80"
+    depends_on:
+      - assembleia-postgres
+    networks:
+      - assembleia-postgres-network
+
+networks:
+  assembleia-postgres-network:
+    driver: bridge

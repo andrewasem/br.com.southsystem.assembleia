@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'br.com.southsystem'
+version '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    implementation 'org.apache.commons:commons-lang3:3.10'
+
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+    implementation 'javax.servlet:javax.servlet-api:3.1.0'
+}
+
+test {
+    useJUnitPlatform()
+}
