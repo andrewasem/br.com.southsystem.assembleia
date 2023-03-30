@@ -1,0 +1,33 @@
+default:
+  user-suggested-action: Por favor, caso o problema persista entre em contato com o nosso suporte
+  application-suggested-action: Entre em contato com o nosso suporte através do e-mail dev@southsystem.com.br
+main:
+  allow-bean-definition-overriding: true
+
+management:
+  security:
+    enabled: false
+
+server:
+  port: 8080
+  servlet:
+    context-path: /assembleia
+
+spring:
+  application:
+    name: assembleia
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/db-assembleia
+    username: user-assembleia
+    password: pass-assembleia
+
+liquibase:
+  url: jdbc:postgresql://localhost:5432/db-assembleia?schema=public
+
+master-config:
+  full-url: r2dbc:postgresql://${spring.r2dbc.username}:${spring.r2dbc.password}@localhost:5432/db-assembleia?schema=public
+
+logging:
+  level:
+    io.r2dbc.postgresql.QUERY: DEBUG # for queries
+    io.r2dbc.postgresql.PARAM: DEBUG # for parameters

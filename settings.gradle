@@ -1,0 +1,2 @@
+rootProject.name = 'assembleia'
+include ":contract", ":impl", ":common-exception"

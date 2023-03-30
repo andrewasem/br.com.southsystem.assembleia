@@ -1,0 +1,15 @@
+ext {
+    swaggerVersion = "3.0.0"
+}
+
+dependencies {
+    implementation project(":impl")
+    implementation project(":common-exception")
+
+    implementation "io.springfox:springfox-boot-starter:${swaggerVersion}"
+    implementation "io.springfox:springfox-swagger-ui:${swaggerVersion}"
+    implementation 'org.springframework.hateoas:spring-hateoas'
+
+    implementation 'org.mapstruct:mapstruct:1.4.2.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+}

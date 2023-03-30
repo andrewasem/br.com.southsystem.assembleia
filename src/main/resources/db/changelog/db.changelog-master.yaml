@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      file: db/migration/01_DDL_PAUTA.xml
+  - include:
+      file: db/migration/02_DDL_SESSAO.xml
+  - include:
+      file: db/migration/03_DDL_ASSOCIADO.xml
+  - include:
+      file: db/migration/04_DDL_VOTO.xml
